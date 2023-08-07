@@ -9,6 +9,8 @@ require('dotenv').config();
 app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+const hrRoute = require('./routes/hr');
+app.use('/hr', hrRoute);
 
 const conn = require('./middlewares/connection');
 console.log("Trying to establish a connection to TiDB...");
