@@ -9,6 +9,8 @@ require('dotenv').config();
 app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+const customQuery  = require('./controllers/customQuery');
+app.use('/controller', customQuery);
 const email  = require('./controllers/email');
 app.use('/controller', email);
 const testAttemptsRoute = require('./routes/testAttempts');
