@@ -9,6 +9,8 @@ require('dotenv').config();
 app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+const email  = require('./controllers/email');
+app.use('/controller', email);
 const testAttemptsRoute = require('./routes/testAttempts');
 app.use('/testAttempts', testAttemptsRoute);
 const screeningTestRoute = require('./routes/screeningTest');
