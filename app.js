@@ -9,6 +9,8 @@ require('dotenv').config();
 app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+const campaignRoute = require('./routes/campaign');
+app.use('/campaign', campaignRoute);
 const hrRoute = require('./routes/hr');
 app.use('/hr', hrRoute);
 
